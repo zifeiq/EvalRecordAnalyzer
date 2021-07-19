@@ -100,11 +100,8 @@ def make_cached_request(url):
     if cache:
         return cache
     else:
-        print('making request', f'{BASE_URL}{url}')
         res = requests.get(f'{BASE_URL}{url}', headers=forge_header())
         if res.status_code == 200:
-            print(res)
-            print(res.text)
             res_json = res.json()
             write_cache(url, res_json)
             return res_json
@@ -118,10 +115,10 @@ def get_details_of_record_id(record_id):
 
 
 def get_eval_file(rel_path):
-    url = f'{BASE_URL}eval/blobs/{rel_path}'
+    url = f'eval/blobs/{rel_path}'
     return make_cached_request(url)
 
 
 def list_eval_dir(storage_root):
-    url = f'{BASE_URL}eval/trees/{storage_root}'
+    url = f'eval/trees/{storage_root}'
     return make_cached_request(url)
