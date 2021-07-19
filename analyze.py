@@ -5,7 +5,7 @@ from requests.api import delete
 from eval import EvalRecord, Textline
 from config import LANG_CONFIG, ENTITY_UNION_CONFIG, DOC_TYPED_SEGMENTS
 
-from tqdm import tqdm
+from tqdm.auto import tqdm
 from tabulate import tabulate
 
 
