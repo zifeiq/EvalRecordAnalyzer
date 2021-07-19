@@ -33,6 +33,11 @@ LANG_CONFIG = {
         "ja_JP",
         "zh_TW",
         "ko_KR",
+    },
+    "cjk_hw": {
+        "zh_CN_hw",
+        "ja_JP_hw",
+        "ko_KR_hw",
     }
 }
 
