@@ -100,8 +100,11 @@ def make_cached_request(url):
     if cache:
         return cache
     else:
+        print('making request', f'{BASE_URL}{url}')
         res = requests.get(f'{BASE_URL}{url}', headers=forge_header())
         if res.status_code == 200:
+            print(res)
+            print(res.text)
             res_json = res.json()
             write_cache(url, res_json)
             return res_json
